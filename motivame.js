@@ -93,12 +93,20 @@ const frases = [
 ];
 
   $('button').click(function() {
-    const frase = frases[Math.floor(Math.random() * frases.length)];
-    $('#quote')
-      .stop(true, true)            // Detiene animaciones previas
-      .text(frase)                 // Rellena con la nueva frase
-      .fadeIn(400)                 // Aparece en 0.4s
-      .delay(6000)                 // Se mantiene 6s
-      .fadeOut(400);               // Desaparece en 0.4s
+  const frase = frases[Math.floor(Math.random() * frases.length)];
+  $('#quote')
+    .stop(true, true)            // Detiene animaciones previas
+    .text(frase)                 // Rellena con la nueva frase
+    .css({ 
+      visibility: 'visible',      // Hace visible la frase
+      opacity: 1                  // Toda la opacidad 
+    })
+    .delay(6000)                 // Espera 6 segundos
+    .queue(function() {          // Animación para ocultar la frase
+      $(this).css({ 
+        opacity: 0,
+        visibility: 'hidden'
+      }).dequeue();
+    });
   });
 });

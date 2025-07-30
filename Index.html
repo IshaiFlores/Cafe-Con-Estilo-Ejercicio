@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres UTF-8 -->
-    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Configuración viewport para responsive design -->
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">     <!-- Configuración viewport para responsive design -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    <!-- Configuración de jquery para la logica del boton para responsive design -->
     <header><h1 class="Encabezado">Café con estilo</h1></header>
     <body>
         <img src="Logo café.png" alt="Logo Cafe">
@@ -11,15 +10,14 @@
             ¡Bienvenidos a el café con estilo! Aquí cada taza cuenta una historia, y cada visita se convierte en un momento especial. Gracias por acompañarnos, ¡tu lugar está listo y el café también!
         </p>
         <button>Motivame</button>
-        <p id="quote" style="display: none; margin-top: 12px; font-style: italic; color: #5C3A21;"></p>
+        <p id="quote"></p>
         <script src="motivame.js"></script>
     </body>
-</html>
+</html> 
 
 
  <style>
         body{
-            /* font-family: 'Arial', sans-serif;*/
             background-color: #FFF9F0; /* crema */
             color: #5C3A21; /* marrón café */
             display: flex;
@@ -30,7 +28,7 @@
             line-height: 1.6;
             min-height:  70vh;
             gap: 10px;
-        }/*"La vida comienza después del café… pero los mejores momentos se viven sorbo a sorbo." Posible frase que podemos utilizar*/
+        }
        
         
         /* CSS de la imagen */
@@ -48,7 +46,7 @@
           font-family: 'Lato', sans-serif;
           font-weight: 700;
           margin: px auto;
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           padding: 0 15px;
         }
 
@@ -59,6 +57,22 @@
           font-family: 'Helvetica', sans-serif;
           margin-bottom: 5px;
           font-size: 2.1rem;
+        }
+
+        /* CSS de la frase motivadora */
+        #quote
+        { 
+          visibility: hidden;  /* Se hace invisible*/
+          opacity: 0;        
+          margin-top: 12px; 
+          font-style: italic; 
+          font-weight: 500;
+          font-size: 1.4rem; 
+          color: #5C3A21;
+          height: auto;         /* Ajusta altura al contenido */
+          min-height: 1.4rem;   /* Altura mínima */
+          transition: opacity 0.4s ease, visibility 0.4s ease; /*Animación de transicion */
+          
         }
 
         /* Apartado Responsive para el tamano de las pantallas */
@@ -77,11 +91,23 @@
 
             .Introduccion
             {
-              font-size: 1rem;
+              font-size: 1.1rem;
 
             }
 
+            #quote
+            {
+              
+              font-size: 1.3rem;
+
+            }
+
+            
+
+      
         }
+
+        
 
         @media(max-width:480px)
         {
@@ -99,20 +125,28 @@
             button
             {
               padding: 10px 20px;
-              font-size: 0.9rem;
+              font-size: 1.0rem;
 
             }
 
              .Introduccion
             {
-              font-size: 0.9rem;
+              font-size: 1.0rem;
+
+            }
+
+            #quote
+            {
+              
+              font-size: 1.2rem;
 
             }
 
 
+
         }
 
-    /* CSS del boton (Lo copie de una pagina solo modifique el tamano y el color) */
+    /* CSS del boton */
     button{
     appearance: button;
     background-color: #341d0c;
@@ -178,11 +212,5 @@
     background: none;
     }
 
-    /*Para la implementacion de la logica del boton, si se cambia el nombre
-    del boton, habria que modificar el CSS*/
-
-    /* Por los demas aspectos, pueden modificarlos como consideren adecuados
-    , yo como UI/UX me muero de hambre, me falta creatividad en ese aspecto asi que les 
-    dejo carta abierta para que modifiquen el CSS al gusto -Ishai */
     
  </style>
